@@ -1,5 +1,6 @@
 import 'package:companyattendance/homescreen.dart';
 import 'package:companyattendance/loginscreen.dart';
+import 'package:companyattendance/user.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -29,9 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: KeyboardVisibilityProvider(
-        child: AuthCheck()
-        ),
+      home: KeyboardVisibilityProvider(child: AuthCheck()),
     );
   }
 }
@@ -60,6 +59,7 @@ class _AuthCheckState extends State<AuthCheck> {
     try {
       if (sharedPreferences.getString('employeeid') != '') {
         setState(() {
+          User.employeeId = sharedPreferences.getString('employeeid')!;
           userAvailable = true;
         });
       }

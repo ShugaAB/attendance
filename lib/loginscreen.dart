@@ -12,13 +12,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController idController = TextEditingController();
-  TextEditingController passController = TextEditingController();
 
   double screenHeight = 0;
   double screenWidth = 0;
 
   Color primary = Color(0xffeef444c);
+
+  
+  TextEditingController idController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
+  
 
   late SharedPreferences sharedPreferences;
 
